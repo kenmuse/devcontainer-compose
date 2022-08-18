@@ -6,9 +6,10 @@
             "outFiles": ["${workspaceFolder}/dist/**/*.js"],
             "request": "launch",
             "cwd": "${workspaceRoot}",
+            "preLaunchTask": "Watch",
             "runtimeExecutable": "npm",
             "runtimeArgs": [
-                "run-script", "dev"
+                "run-script", "start"
             ],
         }
     ]
