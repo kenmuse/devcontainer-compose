@@ -7,14 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc",
     "watch": "npx tsc --watch",
-    "start": "nodemon --delay 3 ./dist/index.js",
-    "host": "npm build && npm start",
-    "dev": "npx tsc --watch & nodemon --delay 3 ./dist/index.js"
+    "start": "nodemon --delay 2 ./dist/index.js"
   },
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.1",
-    "redis": "^4.2.0"
+    "express": "^4.18.1"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",

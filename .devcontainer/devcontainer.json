@@ -2,10 +2,9 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.245.0/containers/typescript-node
 {
 	"name": "ExpressApp",
-	"dockerComposeFile": "docker-compose.yml",
-	"service": "app",
-	"shutdownAction": "stopCompose",
-	"workspaceFolder": "/workspace",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
 
 	// Configure tool-specific properties.
 	"customizations": {
@@ -20,18 +19,21 @@
 		}
 	},
 
+	"mounts": [
+		"source=express-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
+	],
+
+	"remoteEnv": {
+		"PORT": "8000"
+	},
+
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [ 
-		"redis-stack:8001"
 	],
 	"portsAttributes": {
 		"8000": {
 			"label": "Express",
 			"onAutoForward": "notify"
-		},
-		"redis-stack:8001": {
-			"label": "Redis Dashboard",
-			"onAutoForward": "silent"
 		}
 	},
 
