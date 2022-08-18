@@ -1,7 +1,7 @@
-FROM mcr.microsoft.com/vscode/devcontainers/typescript-node:0-16-bullseye
+ARG VARIANT=3.16
+ARG NODE_VERSION=18.7.0
+FROM node:${NODE_VERSION}-alpine${VARIANT}
 
-# Install netcat
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends netcat redis-tools
-
-RUN su node -c "npm i --location=global npm@8.18.0"
+RUN apk upgrade \
+  && apk --update add git
+RUN npm install -g npm@8.18.0
