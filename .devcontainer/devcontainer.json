@@ -25,13 +25,13 @@
 		"redis-stack:8001"
 	],
 	"portsAttributes": {
-		"80": {
+		"8000": {
 			"label": "Express",
 			"onAutoForward": "notify"
 		},
 		"redis-stack:8001": {
 			"label": "Redis Dashboard",
-			"onAutoForward": "ignore"
+			"onAutoForward": "silent"
 		}
 	},
 

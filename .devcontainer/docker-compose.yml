@@ -12,7 +12,8 @@ services:
     command: "sleep infinity"
     depends_on:
       - redis-stack
-    network_mode: service:redis-stack
+    environment:
+      - PORT=8000
   
   redis-stack:
     image: redis/redis-stack:latest
@@ -20,6 +21,8 @@ services:
      - redis-data:/data
     expose:
       - 6379
+    ports:
+      - 8001
 
 volumes:
  redis-data:
