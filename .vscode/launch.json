@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "name": "Dev Debug",
+            "type": "node",
+            "outFiles": ["${workspaceFolder}/dist/**/*.js"],
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run-script", "dev"
+            ],
+        }
+    ]
+
+}
